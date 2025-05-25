@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
     await axios.post(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       chat_id: chatId,
       text: message,
-      parse_mode: "HTML",
+      parse_mode: "HTML"
     });
     res.status(200).send("Sent to Telegram");
   } catch (err) {
